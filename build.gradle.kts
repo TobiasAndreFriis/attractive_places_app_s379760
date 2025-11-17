@@ -4,3 +4,13 @@ plugins {
     alias(libs.plugins.kotlin.android) apply false
     alias(libs.plugins.kotlin.compose) apply false
 }
+buildscript {
+    repositories {
+        google()
+        flatDir { dirs("libs") }
+        mavenCentral()
+    }
+    dependencies {
+        classpath(libs.secrets.gradle.plugin)
+    }
+}
